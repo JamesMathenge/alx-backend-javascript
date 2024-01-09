@@ -1,5 +1,13 @@
-export default function createEmployeesObject(departmentName, employees) {
-  return {
-    [departmentName]: [...employees],
-  };
+export default function iterateThroughObject(reportWithIterator) {
+  let output = '';
+
+  for (const [index, item] of Object.entries(reportWithIterator)) {
+    output += `${item}`;
+
+    if (parseInt(index, 10) !== reportWithIterator.length - 1) {
+      output += ' | ';
+    }
+  }
+
+  return output;
 }
